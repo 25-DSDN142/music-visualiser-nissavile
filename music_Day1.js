@@ -152,7 +152,6 @@ ellipse(moonX, moonY, moonSize);
    // FRONT HILL 
   fill(0, 80, 40);
   beginShape();
-  let baseBack = height * 0.82;                 // sit higher so not hidden
   let baseBack = height * 0.82;
   let ampBack  = map(sB, 0, 1, 6, height*0.08); // gentle
   for (let x = 0; x <= width; x += 12) {
@@ -167,7 +166,6 @@ ellipse(moonX, moonY, moonSize);
   planeX = (planeX + 3) % (width + 40);
 
   // plane size based on vocals (v goes from 0–1)
-  let planeSize = map(vocal, 0, 100, 1, 5); // 0.8x at quiet, 1.5x at loud
   let planeSize = map(vocal, 0, 100, 1, 5); 
 
   push();
