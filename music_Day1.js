@@ -3,13 +3,12 @@ let planeX = 0;
 let lanternPositions = [];
 let lanternPositions2 = [];
 
-// super light smoothing for channels (0..1)
 let sV = 0, sB = 0, sD = 0, sO = 0;
 
 
-
-
 function draw_one_frame(words, vocal, drum, bass, other, counter) {
+
+textFont('Didot');
   // normalised channels
   let v = vocal / 100;
   let b = bass  / 100;
@@ -140,7 +139,7 @@ ellipse(moonX, moonY, moonSize);
   // BACK HILL 
   fill(0, 70, 25);
   beginShape();
-  let baseFront = height * 0.74;                 // front hill baseline
+  let baseFront = height * 0.74;                   // front hill baseline
   let ampFront  = map(sB, 0, 1, 8, height*0.16); // max ~16% of height
   for (let x = 0; x <= width; x += 10) {
     let nx = x * 0.005 + frameCount * 0.006;     // slightly faster noise
@@ -154,6 +153,7 @@ ellipse(moonX, moonY, moonSize);
   fill(0, 80, 40);
   beginShape();
   let baseBack = height * 0.82;                 // sit higher so not hidden
+  let baseBack = height * 0.82;
   let ampBack  = map(sB, 0, 1, 6, height*0.08); // gentle
   for (let x = 0; x <= width; x += 12) {
     let nx = x * 0.003 + frameCount * 0.004;    // slow noise
@@ -168,6 +168,7 @@ ellipse(moonX, moonY, moonSize);
 
   // plane size based on vocals (v goes from 0–1)
   let planeSize = map(vocal, 0, 100, 1, 5); // 0.8x at quiet, 1.5x at loud
+  let planeSize = map(vocal, 0, 100, 1, 5); 
 
   push();
   translate(planeX - 20, planeY);
