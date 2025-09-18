@@ -59,7 +59,7 @@ function setup() {
   // create text inputs
   textInput = createInput('words...');
   textInput.parent('wordsContainer');
-
+  
   // create sliders
   slider1 = createSlider(0, 100, 50);
   slider2 = createSlider(0, 100, 50);
