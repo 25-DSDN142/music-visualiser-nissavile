@@ -116,10 +116,12 @@ pop();
 let moonX = width * 0.8;
 let moonY = height * 0.1;
 
-// size: base + pulse
-let baseMoon = 80; // base diameter
-let moonPulse = sin(frameCount * 0.9) * 15; // smooth in/out
-let moonSize = baseMoon + moonPulse;
+// size + pulse
+
+let baseMoon = 80;  
+let pulse = sin(frameCount * 0.05) * 10; 
+let moonSize = baseMoon + pulse + (sV * 40) + (sD * 20);
+
 
 // outer glow
 noStroke();
